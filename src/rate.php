@@ -2,11 +2,7 @@
 session_start();
 if(isset($_SESSION["username"])) 
 {
-$server="localhost";
-$user="root";
-$password="";
-$dbname="Touragency";
-$conn=mysqli_connect($server,$user,$password,$dbname);
+include 'Config.php';
 if($conn->connect_error)
 {
     die("Connection error".$conn->connect_error);
@@ -32,6 +28,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 	echo $new;
 	$sql1=mysqli_query($conn,"UPDATE TRAVEL SET rating=$new WHERE place='$place' ");
 	if($sql==TRUE)
-	header ("Location:Input.php");
+	header ("Location:ip.php");
 }
 }	

@@ -40,6 +40,7 @@ a:link, a:visited
 <body>
 <?php
  session_start();
+ include 'Config.php';
  if(isset($_SESSION["username"])) 
  {
     echo '<h5>',"Already Logged In","</h5>";
@@ -47,11 +48,7 @@ a:link, a:visited
  }
  else
  {
- $server="localhost";
- $user="root";
- $password="";
- $dbname="Touragency";
- $conn=mysqli_connect($server,$user,$password,$dbname);
+ 
  if($conn->connect_error)
  {
     die("Connection error".$conn->connect_error);

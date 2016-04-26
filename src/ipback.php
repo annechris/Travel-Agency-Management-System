@@ -3,11 +3,7 @@ session_start();
 
 if(isset($_SESSION["username"])) 
 {
-$server="localhost";
-$user="root";
-$password="";
-$dbname="Touragency";
-$conn=mysqli_connect($server,$user,$password,$dbname);
+include 'Config.php';
 if($conn->connect_error)
 {
     die("Connection error".$conn->connect_error);
